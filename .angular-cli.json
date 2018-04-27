@@ -20,8 +20,8 @@
       "prefix": "app",
       "styles": [
         "styles.css",
-        "../node_modules/bootstrap/dist/css/bootstrap.min.css",
-        "../src/assets/css/movie-item.css"
+        "../node_modules/bootstrap/dist/css/bootstrap.min.css",    
+        "assets/css/movie-world.css"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
