@@ -6,4 +6,6 @@
 export const environment = {
   production: false,
   apiUrl: 'https://api.themoviedb.org/3/movie/popular?api_key=9cb17f01a9e1a4cc15db82335590d2cb&language=en-US&page=1',
+  upcomingUrl : 'https://api.themoviedb.org/3/movie/upcoming?api_key=9cb17f01a9e1a4cc15db82335590d2cb&language=en-US&page=1'
+
 };

@@ -1,29 +1,28 @@
-import { map } from 'rxjs/operators';
-import { MovieService } from './../services/movies.service';
 import { Component, OnInit } from '@angular/core';
+import { MovieService } from './../services/movies.service';
+import { Observable } from 'rxjs/Observable';
 import { HttpClient } from '@angular/common/http';
 import 'rxjs/add/operator/map';
-import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
 @Component({
-  selector: 'app-popular-movies',
-  templateUrl: './popular-movies.component.html',
-  styleUrls: ['./popular-movies.component.css']
+  selector: 'app-upcoming-movies',
+  templateUrl: './upcoming-movies.component.html',
+  styleUrls: ['./upcoming-movies.component.css']
 })
-export class PopularMoviesComponent implements OnInit {
+export class UpcomingMoviesComponent implements OnInit {
   movieData = [];
 
   constructor(
     private movieService: MovieService) { }
 
   ngOnInit() {
-    this.getPopularMoviesList();
+    this.getUpcomingMoviesList();
   }
 
-  getPopularMoviesList() {
-    this.movieService.getPopularMovies()
+  getUpcomingMoviesList() {
+    this.movieService.getUpcomingMovies()
         .subscribe((data: any) => {
           this.movieData = data.results.map(movieData => movieData);
           console.log(this.movieData);
@@ -31,6 +30,7 @@ export class PopularMoviesComponent implements OnInit {
           console.error('Error retrieving  Data');
           return Observable.throw(error);
       });
-}
+  }
+
 
 }
